@@ -1,0 +1,25 @@
+1)
+
+startCDH.sh
+jps
+$HADOOP_HOME/bin/hadoop fs -mkdir /lab5
+
+#Check hadoop manager -> hdfs namenode -> Browse the filesystem  on firefox
+
+2)
+cd Desktop
+touch a.txt
+vim a.txt
+vi a.txt
+#enter the info -> :wq
+cd ..
+$HADOOP_HOME/bin/hadoop fs -put /home/hadoop/Desktop/a.txt /lab5
+
+3)
+cd Desktop
+rm a.txt
+$HADOOP_HOME/bin/hadoop fs -get /lab5/a.txt /home/hadoop/Desktop
+ls
+
+4)
+$HADOOP_HOME/bin/hadoop fs -rm -R /lab5/a.txt
